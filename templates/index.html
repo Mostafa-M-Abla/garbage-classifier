@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Garbage Classifier </title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.4/build/pure-min.css" integrity="sha384-LJy5cxQRSMIYu2ic+Tvw0Azob5Z3dQxRkR8LNGIq46AJEdfE9DtuBOCNtifRJeB7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+</head>
+	
+<body>
+
+<!--           Header          -->
+<h1 align = "center" >Garbage Classifier </h1>
+
+<!--           Intro          -->
+<div style="font-family: 'Comfortaa', serif;  font-size: 20; position: relative;  top: 0px;">
+<p align = "center" > This AI powered app classifies household garbage images into 12 categories. <br>
+	The runnable code used to build and train the model is <a href="https://www.kaggle.com/mostafaabla/garbage-classification">here</a>, 
+	the dataset used to train the model is <a href="https://www.kaggle.com/mostafaabla/garbage-classification-keras-transfer-learning">here</a>,<br>
+	and the complete GitHub repo is <a href="https://github.com/Mostafa-M-Abla/garbage-classifier">here</a>.</p>
+</div>
+
+<!--           Prompt the user to enter the URL of the image         -->
+<div style="position: relative;  top: 5px; ">
+	<form id = "enter_url" align = "center" class="pure-form" method="POST" action="/">
+		<fieldset>
+			<label for="image_url">Please Enter Image URL:  </label>
+			<input type="text" placeholder="URL" id="image_url" name="url-input"/>
+			<button type="submit" class="pure-button pure-button-primary">Classify</button>
+		</fieldset>
+	</form>	
+</div>
+
+<!--           Show the selected image          -->
+{% if image_to_classify_name %}
+<div style="text-align: center; position: relative; top: 20px;">
+	<img src={{image_to_classify_name}} height="150" />
+</div>
+{% endif %}
+
+<!--           Prediction's Visulaization    -->
+{% if pred_visualisation_name %}
+<div style="text-align: center;  position: relative; top: 50px; ">
+	<img src={{pred_visualisation_name}} height="170" />
+</div>
+{% endif %}
+
+<!--           Probabilities Table          -->
+{% if category_1_name %}
+<div style="font-size: 15px;  position: relative; top: 80px; ">
+	<table id = "preds_table" class = "pure-table" align = "center" >
+		<thead>
+			<tr>
+				<th></th>
+				<th>Category</th>
+				<th>Probability</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>{{category_1_name}}</td>
+				<td>{{category_1_prob}}</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>{{category_2_name}}</td>
+				<td>{{category_2_prob}}</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>{{category_3_name}}</td>
+				<td>{{category_3_prob}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endif %}
+
+<!--           Author's Photo          -->
+<div style="position: absolute;  top: 20px; left: 60px;">
+	<img id = "author_photo" src="{{url_for('static', filename='author_photo.jpg')}}" />
+</div>
+
+<!--           Author's Name          -->
+<div style="font-family: 'Comfortaa', serif; font-size: 20; position: absolute; top: 160px; left: 50px;">
+	<p  id = "author_name" >  Mostafa Mohamed</p>
+</div>
+
+	  
+</body>
