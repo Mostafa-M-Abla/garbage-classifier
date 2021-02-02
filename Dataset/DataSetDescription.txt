@@ -1,0 +1,22 @@
+Context:
+This dataset has 15,150 images from 12 different classes of household garbage; paper, cardboard, biological, metal, plastic, green-glass, brown-glass, 
+white-glass, clothes, shoes, batteries, and trash.
+
+Garbage Recycling is a key aspect of preserving our environment. To make the recycling process possible/easier, the garbage must be sorted to
+groups that have similar recycling process. I found that most available data sets classify garbage into a few classes (2 to 6 classes at most). 
+Having the ability to sort the household garbage into more classes can result in dramatically increasing the percentage of the recycled garbage.
+
+Content:
+An ideal setting for data collection would be to place a camera above a conveyor where the garbage comes one by one, so that the camera can capture 
+real garbage images. But since such a setup is not feasible at the moment I collected most of the images in this dataset by web scraping, I tried to 
+get images close to garbage images whenever possible, for example in biological garbage category I searched for rotten vegetables, rotten fruits and 
+food remains, etc. However, for some classes such as clothes or shoes it was more difficult to get images of clothes or shoes from the garbage, so 
+mostly it was images of normal clothes. Nevertheless, being able to classify the images of this data set to 12 classes can be a big step towards 
+improving the recycling process.
+
+Acknowledgements:
+The clothes category and 22 % of the shoes' category were obtained from the Clothing dataset https://www.kaggle.com/agrigorev/clothing-dataset-full
+Around 29% of the other 9 classes combined was collected from the Garbage Classification dataset https://www.kaggle.com/asdasdasasdas/garbage-classification
+All the rest of the images were obtained using Web Scrapping.
+All the images collected using web scrapping are owned by their original photographers/owners. The images are only used to promote research and is 
+not used to generate any profit. Any of the images in the data set can be deleted upon the request of the original photographer/owner.
